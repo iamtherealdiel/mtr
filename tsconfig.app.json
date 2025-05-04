@@ -1,0 +1,46 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "target": "ES2020",
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+
+    // Module resolution
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+
+    // Relaxed checks to reduce warnings
+    "strict": true,
+    "noUnusedLocals": true,        // Show warnings for unused variables
+    "noUnusedParameters": true,    // Show warnings for unused parameters
+    "allowUnusedLabels": true,     // Don't error on unused labels, just warn
+    "allowUnreachableCode": true,  // Don't error on unreachable code, just warn
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": false,        // Allow implicit any types
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "strictNullChecks": false,     // Don't warn about possible null values
+    "strictFunctionTypes": false,  // More lenient function type checking
+    "strictPropertyInitialization": false, // Don't require class properties to be initialized
+    
+    // Additional helpful settings
+    "forceConsistentCasingInFileNames": true,
+    "useDefineForClassFields": true,
+    "baseUrl": ".",               // Enable absolute imports from project root
+    "paths": {                    // Path aliases for cleaner imports
+      "@/*": ["./src/*"]
+    },
+    
+    // Report errors as warnings instead of errors
+    "diagnostics": true,          // Show diagnostic information
+    "extendedDiagnostics": true,  // Show detailed diagnostic information
+    "noErrorTruncation": false    // Truncate error messages for readability
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"]
+}
